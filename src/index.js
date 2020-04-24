@@ -5,14 +5,14 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
 import App from './App';
+import planReducer from './reducers/planReducer';
 
 // import './index.css';
 
-let reducer = ''
 
 const composedEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-let store = createStore( reducer, composedEnhancers(applyMiddleware(thunk)) )
+let store = createStore( planReducer, composedEnhancers(applyMiddleware(thunk)) )
 
 ReactDOM.render(
   <React.StrictMode>

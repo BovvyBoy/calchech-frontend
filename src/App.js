@@ -1,6 +1,7 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux'
+import {fetchPlans} from './actions/fetchPlans'
 
 class App extends React.Component {
 
@@ -19,6 +20,12 @@ class App extends React.Component {
     );
 
   }
+
+  // mapStateToProps = (state) => {
+  //   return {
+  //     plans: state.accounts
+  //   }
+  // }
 }
 
-export default App;
+export default connect( null, { fetchPlans })(App);
