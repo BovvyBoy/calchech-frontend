@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
-import { connect } from 'react-redux'
-import {fetchPlans} from './actions/fetchPlans'
+// import { connect } from 'react-redux'
+
+import PlansContainer from './containers/PlansContainer'
 
 class App extends React.Component {
 
   componentDidMount(){
-    fetch('http://localhost:3000/api/v1/plans')
-    .then(response => response.json())
-    .then(data => console.log(data))
+ 
   }
 
 
@@ -16,6 +15,7 @@ class App extends React.Component {
     return (
       <div className="App">
         App
+        <PlansContainer />
       </div>
     );
 
@@ -23,9 +23,9 @@ class App extends React.Component {
 
   // mapStateToProps = (state) => {
   //   return {
-  //     plans: state.accounts
+  //     plans: state.plans
   //   }
   // }
 }
 
-export default connect( null, { fetchPlans })(App);
+export default App;
