@@ -14,7 +14,6 @@ class PlansContainer extends React.Component {
     render() {
         return (
             <div>
-                Plans Container
                 <PlansInput />
                 <Plans plans={this.props.plans}/>
             </div>

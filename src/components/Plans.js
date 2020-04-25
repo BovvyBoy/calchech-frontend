@@ -4,9 +4,9 @@ const Plans = (props) => {
     
     return(
         <ul>
-            <h1>Plans</h1>
+            <h2>Plans</h2>
             {props.plans.map(plan => 
-                <li key={plan.id}>{plan.name} - {plan.duration}</li>
+                <li key={plan.id}>{plan.name} - {plan.duration} day(s)</li>
             )}
         </ul>
     )
