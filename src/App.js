@@ -14,7 +14,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <h1>Cal-Chech Calorie Counter</h1>
+        <h1>CalChech Calorie Counter</h1>
         <PlansContainer />
       </div>
     );

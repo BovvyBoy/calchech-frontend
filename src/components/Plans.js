@@ -1,14 +1,20 @@
 import React from 'react'
+import {Route, Link} from 'react-router-dom'
+
 
 const Plans = (props) => {
     
     return(
-        <ul>
+        <div>
             <h2>Plans</h2>
-            {props.plans.map(plan => 
-                <li key={plan.id}>{plan.name} - {plan.duration} day(s)</li>
-            )}
-        </ul>
+            <div>
+                {props.plans.map(plan => 
+                    <li key={plan.id}>
+                        <Link to={`/plans/${plan.id}`}>{plan.name}</Link> 
+                    </li>
+                )}
+            </div>
+        </div>
     )
 
 }
