@@ -14,7 +14,6 @@ class DaysContainer extends React.Component {
 	render() {
 		return (
 			<div>
-				{/* <DayInput plan={this.props.plan} /> */}
 				<Switch>
 					<Route
 						path="/plans/:plan_id/days/:id"

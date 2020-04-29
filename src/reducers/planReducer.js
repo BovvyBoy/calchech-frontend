@@ -24,6 +24,11 @@ export default function planReducer(state = { plans: [] }, action) {
 				...state,
 				days: action.payload
 			};
+		case 'DELETE_DAY_MEAL':
+			return {
+				...state,
+				days: state.days.map((day) => (day.id === action.payload.id ? action.payload : day))
+			};
 		default:
 			return state;
 	}
