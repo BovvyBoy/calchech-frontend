@@ -12,13 +12,17 @@ export default function planReducer(state = { plans: [] }, action) {
 		case 'ADD_DAY':
 			return {
 				...state,
-				plans: state.plans.map((plan) => {
-					if (plan.id === action.payload.id) {
-						return action.payload;
-					} else {
-						return plan;
-					}
-				})
+				plans: state.plans.map((plan) => (plan.id === action.payload.id ? action.payload : plan))
+			};
+		case 'DELETE_DAY':
+			return {
+				...state,
+				plans: state.plans.map((plan) => (plan.id === action.payload.id ? action.payload : plan))
+			};
+		case 'FETCH_DAYS':
+			return {
+				...state,
+				days: action.payload
 			};
 		default:
 			return state;

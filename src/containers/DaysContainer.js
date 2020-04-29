@@ -1,16 +1,41 @@
-import React from 'react'
-import DayInput from '../components/DayInput'
-import Days from '../components/Days'
+import React from 'react';
+// import DayInput from '../components/DayInput';
+import Days from '../components/Days';
+import Day from '../components/Day';
+import { connect } from 'react-redux';
+import { fetchDays } from '../actions/fetchDays';
+import { Route, Switch } from 'react-router-dom';
 
 class DaysContainer extends React.Component {
-    render() {
-        return (
-            <div>
-                <DayInput plan={this.props.plan}/>
-                <Days days={this.props.plan && this.props.plan.days} />
-            </div>
-        )
-    }
+	componentDidMount() {
+		this.props.fetchDays(this.props.plan.id);
+	}
+
+	render() {
+		return (
+			<div>
+				{/* <DayInput plan={this.props.plan} /> */}
+				<Switch>
+					<Route
+						path="/plans/:plan_id/days/:id"
+						render={(routerProps) => <Day {...routerProps} days={this.props.days} />}
+					/>
+					<Route
+						path="/plans/:id"
+						render={(routerProps) => (
+							<Days {...routerProps} days={this.props.plan && this.props.plan.days} />
+						)}
+					/>
+				</Switch>
+			</div>
+		);
+	}
 }
 
-export default DaysContainer
+const mapStateToProps = (state) => {
+	return {
+		days: state.days
+	};
+};
+
+export default connect(mapStateToProps, { fetchDays })(DaysContainer);
