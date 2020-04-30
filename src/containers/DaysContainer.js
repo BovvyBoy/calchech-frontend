@@ -22,7 +22,11 @@ class DaysContainer extends React.Component {
 					<Route
 						path="/plans/:id"
 						render={(routerProps) => (
-							<Days {...routerProps} days={this.props.plan && this.props.plan.days} />
+							<Days
+								{...routerProps}
+								plan={this.props.plan}
+								days={this.props.plan && this.props.plan.days}
+							/>
 						)}
 					/>
 				</Switch>

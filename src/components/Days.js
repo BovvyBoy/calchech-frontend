@@ -9,6 +9,7 @@ const Days = (props) => {
 	const handleDelete = (day) => {
 		props.deleteDay(day.id, day.plan_id);
 	};
+	console.log(props);
 	return (
 		<div>
 			<h4>Days</h4>
@@ -21,6 +22,7 @@ const Days = (props) => {
 				))}
 			<DayInput plan={props.plan} />
 		</div>
+
 		// <div>
 		// 	<h4>Days</h4>
 		// 	{props.days &&

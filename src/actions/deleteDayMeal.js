@@ -4,6 +4,6 @@ export const deleteDayMeal = (planId, dayId, mealId) => {
 			method: 'DELETE'
 		})
 			.then((response) => response.json())
-			.then((plan) => dispatch({ type: 'DELETE_DAY_MEAL', payload: plan }));
+			.then((day) => dispatch({ type: 'DELETE_DAY_MEAL', payload: day }));
 	};
 };

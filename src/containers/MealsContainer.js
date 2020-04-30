@@ -7,7 +7,7 @@ export class MealsContainer extends React.Component {
 	render() {
 		return (
 			<div>
-				<Meals rprops={this.props.rprops} meals={this.props.day.meals} />
+				<Meals rprops={this.props.rprops} meals={this.props.day && this.props.day.meals} />
 			</div>
 		);
 	}
